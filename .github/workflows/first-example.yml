@@ -11,6 +11,8 @@ jobs:
 
       - name: List repo files
         run: ls -alht
-        
+
       - name: Executing Shell Script
-        run: ./ascii-script.sh
+        run: |
+          chmod u+x ascii-script.sh
+          ./ascii-script.sh
