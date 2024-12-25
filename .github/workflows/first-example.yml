@@ -1,6 +1,7 @@
 name: My First Workflow
 on: [push, fork]
 jobs:
+  
   first_job:
     runs-on: ubuntu-latest
     steps:
@@ -8,17 +9,8 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Install cowsay program
-        run: sudo apt-get install -y cowsay
-
-      - name: Welcome message
-        run: |
-          echo "My first GitHub Action Job"
-          ls -ltra
-          cat README.md
-
-      - name: Generate ASCII Artwork
-        run: cowsay -f dragon "Run for cover" >> dragon.txt
-
-      - name: Saved message file contains the work dragon
-        run: grep -i dragon dragon.txt
+      - name: List repo files
+        run: ls -alht
+        
+      - name: Executing Shell Script
+        run: ./ascii-script.sh
