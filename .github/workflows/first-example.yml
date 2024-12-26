@@ -23,7 +23,7 @@ jobs:
     steps:
 
       - name: Sleep for 10 seconds
-        run: sleep 10
+        run: sleep 40
 
       - name: Test file exists
         run: grep -i dragon dragon.txt
