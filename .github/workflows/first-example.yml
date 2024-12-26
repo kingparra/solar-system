@@ -17,9 +17,10 @@ jobs:
           chmod u+x ascii-script.sh
           ./ascii-script.sh
 
-  # each job run in its own vm
+  # each job runs in its own vm
   second_job:
     runs-on: ubuntu-latest
+    needs: first_job
     steps:
 
       - name: Sleep for 10 seconds
