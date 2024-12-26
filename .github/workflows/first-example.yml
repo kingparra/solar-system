@@ -16,3 +16,14 @@ jobs:
         run: |
           chmod u+x ascii-script.sh
           ./ascii-script.sh
+
+  # each job run in its own vm
+  second_job:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Sleep for 10 seconds
+        run: sleep 10
+
+      - name: Test file exists
+        run: grep -i dragon dragon.txt
